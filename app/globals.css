@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.order-btn {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  transition: 4s;
+}
+.order-btn:before, .order-btn:after {
+  content: '';
+  position: absolute;
+  top: -1.5em;
+  z-index: -1;
+  width: 200%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 40%;
+  background-color: rgba(42, 191, 232, 0.25);
+  transition: 4s;
+}
+.order-btn:before {
+  left: -80%;
+  transform: translate3d(0, 5em, 0) rotate(-340deg);
+}
+.order-btn:after {
+  right: -80%;
+  transform: translate3d(0, 5em, 0) rotate(390deg);
+}
+.order-btn:hover, .order-btn:focus {
+  color: white;
+}
+.order-btn:hover:before, .order-btn:focus:before, .order-btn:hover:after, .order-btn:focus:after {
+  transform: none;
+  background-color: rgba(58, 227, 227, 0.75);
+}
